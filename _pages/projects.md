@@ -3,6 +3,8 @@ layout: archives
 permalink: /projects/
 title: "Projects by Tags"
 author_profile: true
+header:
+  image: "/images/anhui.jpg"
 ---
 
 {% include base_path %}

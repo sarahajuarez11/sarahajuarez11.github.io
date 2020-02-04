@@ -1,8 +1,8 @@
 ---
 #layout: archive
 permalink: /projects/
-title: "Projects by Tags"
-author_profile: true
+title: "Projects"
+#author_profile: true
 header:
   image: "/images/anhui.jpg"
 ---

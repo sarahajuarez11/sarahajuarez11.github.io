@@ -2,7 +2,7 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Project"
+  - title: "Code"
     url: /projects/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/

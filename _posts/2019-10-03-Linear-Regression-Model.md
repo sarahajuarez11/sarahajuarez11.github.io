@@ -86,7 +86,7 @@ plot_graph(x, y, sample_names, colors, x0, y0, -1, 1, 'w(0)')
 ```
 
 
-<img src="{{ site.url }}{{ site.baseurl }}output_7_0.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/output_7_0.png" alt="">
 
 
 **(ii) (0.5 points)** Using the rule $sign(w(t)^{T}x_{n}$), please indicate the class in which samples $x_{1}$, $x_{2}$, and $x_{3}$ are classified using the weight w(0). Which samples are not correctly classified based on this rule?

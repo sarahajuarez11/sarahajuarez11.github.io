@@ -9,7 +9,7 @@ mathjax: "true"
 
 ## Classifying Benign vs Malignant Tumors
 The main purpose of this project was to classify whether a tumor is benign or malign based on its attributes. 
-This was done using data from the following UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original).
+This was done using data from the following UCI Machine Learning Repository: [link](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original).)
 The three files csv files used (named “hw1 question1 train.csv”, “hw1 question1 dev.csv”, and ”hw1 question1 test.csv”) can be found on my GitHub under "K-NN Classifier".
 The rows of these files represent the data samples, while columns 1-9 are the features and the class variable is column 10, as described bellow:
 
@@ -161,7 +161,7 @@ plt.show()
 ```
 
 
-![png](output_11_0.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_11_0.png" alt="">
 
 
 *The histograms above are of each individual feature. According to the graphs, the features are not distributed evenly in the 1-10 range. Feature 1 is the most evenly distributed, however the majority of the samples are still equal to or less than five. Overall, the samples seem to have a higher distribution on the lower numbers.*
@@ -199,7 +199,7 @@ plt.show()
 ```
 
 
-![png](output_14_0.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_14_0.png" alt="">
 
 
 *The graph above shows 5 random feature pairs plotted against each other, with the blue dots representing benign samples and red dots representing malignant. According to these scatter plots, the data does appear to be seperable, with the benign samples being concentrated on the bottom left of the graphs and the malignant samples being centered on the top right of the graphs.*
@@ -425,7 +425,7 @@ model_test.plot('k-values')
 ```
 
 
-![png](output_21_0.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_21_0.png" alt="">
 
 
 *According to the graph above, which plots the accuracy and balanced accuracy against the different values of k, the best hyper-parameter K1 based on the accuracy metric is 3 and the best hyper-parameter K2 based on the balanced accuracy is also 3. In this case, the best hyper-parameters are the same k value.*
@@ -542,7 +542,7 @@ model_test.plot('k-values')
 ```
 
 
-![png](output_28_0.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_28_0.png" alt="">
 
 
 

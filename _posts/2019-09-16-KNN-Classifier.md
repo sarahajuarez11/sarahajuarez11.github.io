@@ -3,47 +3,26 @@ title: "K-NN Classifier"
 date: 2019-09-16
 header:
   image: "/images/anhui.jpg"
-excerpt: "This is an assignment I worked on in my Machine Learning class."
+excerpt: "This is an assignment I worked on in my Machine Learning class where I implemented a K-Nearest Neighbors algorithm."
 mathjax: "true"
 ---
 
-## Question 1 (3 points) 
-### Machine learning definitions: 
-Our purpose is to create a coin classification system for a vending machine. What types of Machine Learning, if any, best describe the following scenarios? Please provide a brief explanation. 
-
-**(1 point) (i)** The exact specifications of each coin are measured by an engineer. The vending machine recognizes a given coin based on these specifications. 
-
-*This can not be described as a type of machine learning because the machine isn’t learning from the data, it is just going through an algorithm to determine which coin is which.*
-
-**(1 point) (ii)** An algorithm is presented with a large set of labeled coins and uses this data to infer decision boundaries, based on which the vending machine classifies new coins. 
-
-*This can be described as a supervised/predictive learning because there is training data with labels that the machine learns from in order to classify new coins.*
-
-**(1 point) (iii)** An algorithm is successively presented with coins. Each time the algorithm makes a decision about the coin type and checks the correctness of the decision with the engineer. Based on the engineer’s answer, the algorithm refines the process with which it makes the decision for the next coin.
-
-*This can be described as reinforcement learning because there are no predetermined labels, the machine learns the optimal classification based on the feedback it receives from the engineer.*
-
-## Question 2 (7 points)
-
-### Classifying benign vs malignant tumors: 
-We would like to classify if a tumor is benign
-or malign based on its attributes. We use data from the following UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original).
-Inside “Homework 1” folder on Piazza you can find three files including the train and test data
-(named “hw1 question1 train.csv”, “hw1 question1 dev.csv”, and ”hw1 question1 test.csv”)
-for our experiments. The rows of these files refer to the data samples, while the columns denote
-the features (columns 1-9) and the class variable (column 10), as described bellow:
+## Classifying Benign vs Malignant Tumors
+The main purpose of this project was to classify whether a tumor is benign or malign based on its attributes. 
+This was done using data from the following UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original).
+The three files csv files used (named “hw1 question1 train.csv”, “hw1 question1 dev.csv”, and ”hw1 question1 test.csv”) can be found on my GitHub under "K-NN Classifier".
+The rows of these files represent the data samples, while columns 1-9 are the features and the class variable is column 10, as described bellow:
 
 1. Clump Thickness: discrete values {1, 10}
 2. Uniformity of Cell Size: discrete values {1, 10}
 3. Uniformity of Cell Shape: discrete values {1, 10}
 4. Marginal Adhesion: discrete values {1, 10}
 5. Single Epithelial Cell Size: discrete values {1, 10}
-
 6. Bare Nuclei: discrete values {1, 10}
 7. Bland Chromatin: discrete values {1, 10}
 8. Normal Nucleoli: discrete values {1, 10}
 9. Mitoses: discrete values {1, 10}
-10. Class: 2 for benign, 4 for malignant (this is the outcome)
+10. Class: 2 for benign, 4 for malignant 
 
 
 ```python

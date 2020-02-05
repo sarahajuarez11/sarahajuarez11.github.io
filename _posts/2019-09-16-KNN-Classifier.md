@@ -1,3 +1,11 @@
+---
+title: "K-NN Classifier"
+date: 2019-09-16
+header:
+  image: "/images/anhui.jpg"
+excerpt: "This is an assignment I worked on in my Machine Learning class."
+mathjax: "true"
+---
 
 ## Question 1 (3 points) 
 ### Machine learning definitions: 

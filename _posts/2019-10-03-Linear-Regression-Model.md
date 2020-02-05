@@ -86,7 +86,7 @@ plot_graph(x, y, sample_names, colors, x0, y0, -1, 1, 'w(0)')
 ```
 
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/output_7_0.png" alt="">
+<img src="{{ site.url }}{{ site.baseurl }}/images/p2/output_7_0.png" alt="">
 
 
 **(ii) (0.5 points)** Using the rule $sign(w(t)^{T}x_{n}$), please indicate the class in which samples $x_{1}$, $x_{2}$, and $x_{3}$ are classified using the weight w(0). Which samples are not correctly classified based on this rule?
@@ -157,8 +157,7 @@ plot_graph(x, y, sample_names, colors, x0, y0, -1, -1, 'w(1)')
 ```
 
 
-![png](output_13_0.png)
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/p2/output_13_0.png" alt="">
 
 
 ```python
@@ -200,8 +199,7 @@ plot_graph(x, y, sample_names, colors, x0, y0, -1, 1, 'w(2)')
 ```
 
 
-![png](output_18_0.png)
-
+<img src="{{ site.url }}{{ site.baseurl }}/images/p2/output_18_0.png" alt="">
 
 
 ```python
@@ -256,7 +254,7 @@ plt.tight_layout()
 ```
 
 
-![png](output_23_0.png)
+<img src="{{ site.url }}{{ site.baseurl }}/images/p2/output_23_0.png" alt="">
 
 
 *Feature 1 is distributed mostly around 0-5000 Hertz, feature 2 is a little more evenly distributed, with the highestest distributions around 0-1 degrees and 10 degrees. Features 3 and 4 are distributed in 4 specific values, the rest of the values having no samples and feature 5 has the most samples between 0 and 0.01 meters. The outcome distribution increases until it peaks at around 128 decibels and then it decreases.*

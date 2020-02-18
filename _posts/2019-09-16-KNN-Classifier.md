@@ -24,25 +24,6 @@ The rows of these files represent the data samples, while columns 1-9 are the fe
 9. Mitoses: discrete values {1, 10}
 10. Class: 2 for benign, 4 for malignant 
 
-
-```python
-from datascience import *
-import numpy as np
-from pandas import *
-from math import *
-
-%matplotlib inline
-import matplotlib.pyplot as plt
-from operator import itemgetter
-```
-
-**Data exploration:** 
-First, I used the training data to count how many samples were in the benign and malignant classes. 
-After doing this it's clear that the samples are not evenly distributed and that there's roughly a 1/3 ratio of malignant to benign tumors.
-This means there is a slightly higher chance of a tumor being benign than it being malignant.
-
-
-
 ```python
 # import data from .csv file into table
 training_data = Table.read_table('hw1_question1_train.csv')
@@ -93,8 +74,10 @@ training_data
 </table>
 <p>... (473 rows omitted)</p>
 
-
-
+**Data exploration:** 
+First, I used the training data to count how many samples were in the benign and malignant classes. 
+After doing this it's clear that the samples are not evenly distributed and that there's roughly a 1/3 ratio of malignant to benign tumors.
+This means there is a slightly higher chance of a tumor being benign than it being malignant.
 
 ```python
 # count the total number of samples in the benign/malignant class 
@@ -116,53 +99,6 @@ values distributed equally for each feature?
 According to the graphs, the features are not 
 distributed evenly in the 1-10 range. Feature 1 is the most evenly distributed, however the majority 
 of the samples are still equal to or less than five. Overall, the samples seem to have a higher distribution on the lower numbers.*
-
-
-
-```python
-fig, ax = plt.subplots(3,3)
-fig.set_size_inches(18.5, 11, forward=True)
-
-f1 = training_data.column('f1')
-ax[0][0].hist(f1)
-ax[0][0].set_title('Feature 1')
-
-f2 = training_data.column('f2')
-ax[0][1].hist(f2)
-ax[0][1].set_title('Feature 2')
-
-f3 = training_data.column('f3')
-ax[0][2].hist(f3)
-ax[0][2].set_title('Feature 3')
-
-f4 = training_data.column('f4')
-ax[1][0].hist(f4)
-ax[1][0].set_title('Feature 4')
-
-f5 = training_data.column('f5')
-ax[1][1].hist(f5)
-ax[1][1].set_title('Feature 5')
-
-f6 = training_data.column('f6')
-ax[1][2].hist(f6)
-ax[1][2].set_title('Feature 6')
-
-f7 = training_data.column('f7')
-ax[2][0].hist(f7)
-ax[2][0].set_title('Feature 7')
-
-f8 = training_data.column('f8')
-ax[2][1].hist(f8)
-ax[2][1].set_title('Feature 8')
-
-f9 = training_data.column('f9')
-ax[2][2].hist(f9)
-ax[2][2].set_title('Feature 9')
-
-plt.tight_layout()
-plt.show()
-```
-
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_11_0.png" alt="">
 

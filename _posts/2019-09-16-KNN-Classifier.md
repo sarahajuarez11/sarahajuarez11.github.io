@@ -10,8 +10,8 @@ mathjax: "true"
 ## Classifying Benign vs Malignant Tumors
 The main purpose of this project was to classify whether a tumor is benign or malign based on its attributes. 
 This was done using data from the following UCI Machine Learning Repository: [link](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original).)
-The three files csv files used (named “hw1 question1 train.csv”, “hw1 question1 dev.csv”, and ”hw1 question1 test.csv”) can be found on my GitHub under "K-NN Classifier".
-The rows of these files represent the data samples, while columns 1-9 are the features and the class variable is column 10, as described bellow:
+The three files csv files used can be found on my GitHub under "K-NN Classifier".
+The rows of these files represent the data samples, while columns 1-9 are the features and the class variable is column 10, as described below:
 
 1. Clump Thickness: discrete values {1, 10}
 2. Uniformity of Cell Size: discrete values {1, 10}
@@ -36,9 +36,10 @@ import matplotlib.pyplot as plt
 from operator import itemgetter
 ```
 
-**(a.i) (1 point) Data exploration:** Using the training data, compute the number of samples
-belonging to the benign and the number of samples belonging to the malignant case. What do
-you observe? Are the two classes equally distributed in the data?
+**Data exploration:** 
+First, I used the training data to count how many samples were in the benign and malignant classes. 
+After doing this it's clear that the samples are not evenly distributed and that there's roughly a 1/3 ratio of malignant to benign tumors.
+This means there is a slightly higher chance of a tumor being benign than it being malignant.
 
 
 
@@ -108,11 +109,13 @@ print('Number of samples belonging to malignant class:', num_malignant)
     Number of samples belonging to malignant class: 153
     
 
-*The two classes are not evenly distributed in the data, there are 330 samples that belong to the benign class while only 153 belong to the malignant class.*
 
-**(a.ii) (1 point) Data exploration:** Using the training data, plot the histogram of each feature
+Next, I plotted a histogram of each feature using the training data to see how they are distributed in the 1-10 range among the samples.
 (i.e., 9 total histograms). How are the features distributed in the 1-10 range? Are the sample
 values distributed equally for each feature?
+According to the graphs, the features are not 
+distributed evenly in the 1-10 range. Feature 1 is the most evenly distributed, however the majority 
+of the samples are still equal to or less than five. Overall, the samples seem to have a higher distribution on the lower numbers.*
 
 
 
@@ -164,7 +167,6 @@ plt.show()
 <img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_11_0.png" alt="">
 
 
-*The histograms above are of each individual feature. According to the graphs, the features are not distributed evenly in the 1-10 range. Feature 1 is the most evenly distributed, however the majority of the samples are still equal to or less than five. Overall, the samples seem to have a higher distribution on the lower numbers.*
 
 **(a.iii) (1 point) Data exploration**: Randomly select 5 pairs of features. Using the training
 data, plot scatter plots of the selected pairs (i.e., 5 total scatter plots). Use a color-coding to

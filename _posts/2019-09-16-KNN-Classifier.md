@@ -94,53 +94,22 @@ print('Number of samples belonging to malignant class:', num_malignant)
 
 
 Next, I plotted a histogram of each feature using the training data to see how they are distributed in the 1-10 range among the samples.
-(i.e., 9 total histograms). How are the features distributed in the 1-10 range? Are the sample
-values distributed equally for each feature?
-According to the graphs, the features are not 
+(i.e., 9 total histograms). From this, you can see that the features are not 
 distributed evenly in the 1-10 range. Feature 1 is the most evenly distributed, however the majority 
-of the samples are still equal to or less than five. Overall, the samples seem to have a higher distribution on the lower numbers.*
+of the samples are still equal to or less than five. Overall, the samples seem to have a higher distribution on the lower numbers.
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_11_0.png" alt="">
 
 
 
-**(a.iii) (1 point) Data exploration**: Randomly select 5 pairs of features. Using the training
-data, plot scatter plots of the selected pairs (i.e., 5 total scatter plots). Use a color-coding to
-indicate the class in which the samples belong to (e.g., blue for benign, red for malignant).
-What do you observe? How separable do the data look?
-
-
-```python
-labels = training_data.column('label')
-color= ['red' if l == 4 else 'blue' for l in labels]
-
-fig, ax = plt.subplots(1,5)
-fig.set_size_inches(18.5, 4, forward=True)
-
-ax[0].scatter(f1,f3, c=color)
-ax[0].set_title('Feature 1 vs Feature 3')
-
-ax[1].scatter(f2,f9, c=color)
-ax[1].set_title('Feature 2 vs Feature 9')
-
-ax[2].scatter(f4,f7, c=color)
-ax[2].set_title('Feature 4 vs Feature 7')
-
-ax[3].scatter(f3,f9, c=color)
-ax[3].set_title('Feature 3 vs Feature 9')
-
-ax[4].scatter(f1,f7, c=color)
-ax[4].set_title('Feature 1 vs Feature 7')
-
-plt.tight_layout()
-plt.show()
-```
+For the next step, I randomly select 5 pairs of features and plotted them on scatter plots. 
+Each data point is color-coded to indicate the class in which the samples belong to (e.g., blue for benign, red for malignant).
+Looking at the results from this graph, the data appears to be seperable, with the benign samples being concentrated on the bottom 
+left of the graphs and the malignant samples being centered on the top right of the graphs.
 
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_14_0.png" alt="">
 
-
-*The graph above shows 5 random feature pairs plotted against each other, with the blue dots representing benign samples and red dots representing malignant. According to these scatter plots, the data does appear to be seperable, with the benign samples being concentrated on the bottom left of the graphs and the malignant samples being centered on the top right of the graphs.*
 
 **(b.i) (2 points)** Implement a K-Nearest Neighbor classifier (K-NN) using the euclidean distance (l2-norm) as a distance measure to classify between the benign and malignant classes.
 **Please implement K-NN and do not use available libraries.**

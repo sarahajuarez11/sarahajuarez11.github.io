@@ -111,7 +111,8 @@ left of the graphs and the malignant samples being centered on the top right of 
 <img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_14_0.png" alt="">
 
 
-**(b.i) (2 points)** Implement a K-Nearest Neighbor classifier (K-NN) using the euclidean distance (l2-norm) as a distance measure to classify between the benign and malignant classes.
+**Implementing a K-Nearest Neighbor Classifier:** 
+For the using the euclidean distance (l2-norm) as a distance measure to classify between the benign and malignant classes.
 **Please implement K-NN and do not use available libraries.**
 
 

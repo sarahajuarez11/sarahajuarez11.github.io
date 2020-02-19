@@ -111,7 +111,7 @@ author:
   avatar           : "/images/bio-pic.JPG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Project Portfolio"
   location         : "Hutto, TX"
-  email            :
+  email            : "sarahajuarez11@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

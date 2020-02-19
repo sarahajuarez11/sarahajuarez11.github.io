@@ -3,51 +3,32 @@ title: "Linear Perceptron Model"
 date: 2019-09-25
 header:
   image: "/images/anhui.jpg"
-excerpt: "This is an assignment I worked on in my Machine Learning class."
+excerpt: "In this project I made a simple representation of the linear perceptron algorithm as a proof of concept of how it works."
 mathjax: "true"
 ---
 
-The purpose of question 1 of this homework assignment was to run a linear perceptron algorithm 
-on three training samples x1, x2, and x3. In this scenario, samples x1 belongs to class 1 while 
-samples x2 and x3 belong to class 2. In part (i), I simply plotted the samples, the starting weight 
-line and its direction. I also defined two functions, one for plotting these three things and another 
-for computing dot product for part (ii). In part (ii), I first wrote the data points and weight as vectors 
-and then computed the inner product between the weight and each class to see which samples were misclassified. 
-In this case, it was sample x2, so in part (iii) I used the weight update rule to calculate a new weight based 
-on sample x2 and graphed this new weight line and its direction. After computing the inner products again, 
-now x1 was the only misclassified sample. I used the weight update rule one more time, this time basing it on 
-sample x1 to get a new weight and I plotted this line. Finally after calculating these inner products, I could 
-verify that all of the samples were correctly classified with this new weight line. 
-
-## Question 1 (5 points)
-### Linear Perceptron Algorithm:
-The goal of this problem is to run a linear perceptron algorithm. Assume that you have three training samples in the 2D space:
+## Linear Perceptron Algorithm
+The purpose of this project was to break down the linear perceptron algorithm step-by-step to 
+demonstrate how it works. In order to do this, I set up three training samples in a 2D space.
+These samples are:
 
 1. Sample $x_{1}$ with coordinates (1, 3) belonging to Class 1 ($y_{1}$ = 1)
 2. Sample $x_{2}$ with coordinates (3, 2) belonging to Class 2 ($y_{2}$ = −1)
 3. Sample $x_{3}$ with coordinates (4, 1) belonging to Class 2 ($y_{3}$ = −1)
 
-The linear perceptron is initialized with a line with corresponding weight w(0) = $[2, -1, 1]^{T}$, or
-else the line 2 − x + y = 0.
-In contrast to the example that we have done in class, in this problem **we will include the
-intercept $w_{0}$ or $x_{0}$.**
-
-**(i) (0.5 points)** Plot $x_{1}$, $x_{2}$, and $x_{3}$ in the given 2D space. Plot the line corresponding to weight w(0), as well as the direction of the weight w(0) on the line.
+For this project, the linear perceptron is initialized with a line with corresponding weight w(0) = $[2, -1, 1]^{T}$
+(this can also be written as the line 2 − x + y = 0).
 
 
-```python
-import numpy as np
-from pandas import *
-from math import *
-
-%matplotlib inline
-import matplotlib.pyplot as plt
-from operator import itemgetter
-```
+To start off, I simply plotted $x_{1}$, $x_{2}$, and $x_{3}$, the starting weight 
+line w(0) and the direction of the weight w(0) on the line. I also defined two functions, one for plotting these three things and another 
+for computing dot product for the next part of the project. 
 
 
 ```python
-# function for plotting the sample points, weight line and the direction of the weight
+# function for plotting the sample points, weight line 
+# and the direction of the weight
+
 def plot_graph(x, y, sample_names, colors, x0, y0, u, v, label_name):
     # plot points
     fig, ax = plt.subplots()
@@ -97,10 +78,12 @@ plot_graph(x, y, sample_names, colors, x0, y0, -1, 1, 'w(0)')
 <img src="{{ site.url }}{{ site.baseurl }}/images/p2/output_7_0.png" alt="">
 
 
-**(ii) (0.5 points)** Using the rule $sign(w(t)^{T}x_{n}$), please indicate the class in which samples $x_{1}$, $x_{2}$, and $x_{3}$ are classified using the weight w(0). Which samples are not correctly classified based on this rule?
 
-
-**Note:** You have to compute the inner product $w(0)^{T}x_{n}$, n = 1, 2, 3, and see if it is greater or less than 0.
+For the next step, I used the rule $sign(w(t)^{T}x_{n}$), to determine which samples
+were correctly and incorrectly classified using the weight w(0).
+To do this, I first wrote the data points and weight as vectors 
+and then computed the inner product between the weight and each sample to see which 
+samples were misclassified (based on the inner product being greater or less than zero). 
 
 
 ```python
@@ -122,7 +105,17 @@ inner_product(w0, samples, 'w0')
     The inner product of w0 and x3: -1
     
 
-*The inner product of w(0) and x1 should be greater than zero because x1 is part of class 1 and the inner products of w(0) and x2 as well as w(0) and x3 should both be negative because they're in class 2. Going off of this, x1 and x3 are correctly classified while x2 is not correctly classified.*
+In this case, the inner product of w(0) and x1 should be greater than zero because x1 is part of class 1 
+and the inner products of w(0) and x2 as well as w(0) and x3 should both be less than zero because they're in class 2. 
+Going off of this, x1 and x3 are correctly classified while x2 is not correctly classified.
+
+**edit end**
+ so in part (iii) I used the weight update rule to calculate a new weight based 
+on sample x2 and graphed this new weight line and its direction. After computing the inner products again, 
+now x1 was the only misclassified sample. I used the weight update rule one more time, this time basing it on 
+sample x1 to get a new weight and I plotted this line. Finally after calculating these inner products, I could 
+verify that all of the samples were correctly classified with this new weight line. 
+
 
 **(iii) (1.5 points)** Using the weight update rule from the linear perceptron algorithm, please
 find the value of the new weight w(1) based on the misclassified sample from question (ii). Find

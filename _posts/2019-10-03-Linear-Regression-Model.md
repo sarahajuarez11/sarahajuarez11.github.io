@@ -3,14 +3,14 @@ title: "Linear Regression Model"
 date: 2019-10-03
 header:
   image: "/images/anhui.jpg"
-excerpt: "In this project I implemented a linear regression model to predict the sound pressure in an anechoic wind tunnel."
+excerpt: "In this project I implemented a linear regression model using the ordinary least squares solution and then tested the model by computing the residual sum of squares error between the actual and predicted outcome variable"
 mathjax: "true"
 ---
 
 ## Predicting Sound Pressure in Wind Tunnel Using Linear Regression Model: 
 
 The main purpose of this project was to predict the sound pressure in an anechoic wind tunnel. 
-This was done using data from the Airfoil Self-Noise Data Set in the following UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise#.
+This was done using data from the Airfoil Self-Noise Data Set in the following UCI Machine Learning Repository: [link](https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise#.)
 The rows of these files represent the data samples, while columns 1-5 are the features and the sound pressure output is column 6, as described below:
 
 1. Frequency, in Hertz
@@ -52,48 +52,19 @@ plt.tight_layout()
 <img src="{{ site.url }}{{ site.baseurl }}/images/p2/output_23_0.png" alt="">
 
 
-For question 2 of this homework, we had to implement a linear regression model using the ordinary least squares 
-solution and then test the model by computing the residual sum of squares error between the actual and predicted 
-outcome variable. 
-Then in part (ii) I defined a function to calculate the OLS, 
-and then used it on the training data to compute an array of 6 weights. 
-After this, in part (iii), I defined a 
-function to calculate the RSS value and then used to calculate the RSS using the test data, the weights calculated 
-previously and test data’s actual outcomes. My RSS value when using all the features was about 71. For the bonus, 
-I followed the same process, but using different feature combinations. Using features 3 and 4 I got an RSS of about 
-133, using features 1, 2, and 5 I got an RSS of about 107 and when using features 1 and 4 I got an RSS of  about 85. 
-I wasn’t able to get and RSS value smaller than when I used all the features, however, I did not test all possible 
-combinations, so it might be possible to achieve a smaller RSS value with a different combination of features.
-
 **Implementing a Linear Regression Model:** 
-After that, I implemented a linear regression model using the ordinary least squares (OLS) solution. 
-
-
-**Hint:** You will build the data matrix $$X ∈ R^{N_{train}×6}$$, whose rows correspond to the training
-samples $$x_{1}, . . . , x_{N_{train}} ∈ R^{5×1}$$ and columns to the features (including the constant 1 for the
-intercept): 
-
-\begin{equation*}
-\mathbf{X} =  \begin{bmatrix}
-1 & x_{1}^{T} \\
-: &  : \\
-1 & x_{N}^{T}
-\end{bmatrix}
-∈ R^{N_{train}×6}
-\end{equation*}
-
-
-Then use the ordinary least squares solution that we learned in class: $$w^{∗} = (X^{T} X)^{−1}X^{T} y$$.
-
-
-**Note:** You can use libraries for matrix operations.
-
+After that, I implemented a linear regression model using the ordinary least squares (OLS) solution. In order to use 
+this OLS formula, $$w^{∗} = (X^{T} X)^{−1}X^{T} y$$,  I built a data matrix whose rows corresponded to the training 
+samples and whose columns corresponded to the features (including the constant 1 for the intercept). 
+I also defined a function to calculate the OLS using the formula as reference.  
 
 ```python
 # function for ordinary least squares (OLS)
 # 1) get transpose of X
-# 2) calculate first half of equation: the inverse of the dot product of X transpose and X
-# 3) calculate the second half of the equation: the dot product of X transpose and y
+# 2) calculate first half of equation: the inverse of the 
+#    dot product of X transpose and X
+# 3) calculate the second half of the equation: the dot 
+#    product of X transpose and y
 
 def OLS(X, y):
     transpose_X = X.transpose()
@@ -136,18 +107,23 @@ calculated_weights
 
 
 
-*The liner regression model using the ordinary least squares solution has 6 parameters in this case.*
+The liner regression model using the ordinary least squares solution has 6 parameters in this case.
 
-**(iii) (1.5 points)** Test your model on the test data and compute the residual sum of squares
-error (RSS) between the actual and predicted outcome variable.
+
+After calculating the OLS solution, I tested the model on the test data and computed the residual sum of squares
+error (RSS) between the actual and predicted outcome variable. I ended up getting an RSS value of about 72.
 
 
 ```python
-# function to calculate the residual sum or squares error (RSS) between the actual and predicted outcome
+# function to calculate the residual sum or squares error (RSS) 
+# between the actual and predicted outcome
 # 1) calculate the dot product of X and weights
-# 2) calculate first half of equation: the transpose of the actual outcomes minus the dot product of X and the weights
-# 3) calculate second half of equation: the actual outcomes minus the dot product of X and the weights
-# 4) get the square root of the dot product of the first and second half of the equation
+# 2) calculate first half of equation: the transpose of the actual 
+#    outcomes minus the dot product of X and the weights
+# 3) calculate second half of equation: the actual outcomes minus 
+#    the dot product of X and the weights
+# 4) get the square root of the dot product of the first and second 
+#    half of the equation
 
 def RSS(X, w, y):
     x_dot_w = np.dot(X, w)
@@ -182,8 +158,9 @@ rss
 
 
 
-**(iv) (Bonus, 2 points)** Experiment with different feature combinations and report your findings. What do you observe?
-
+We could stop there, but I decided to experiment with a few different feature combinations instead of using all of them
+to see if I could get a lower RSS value. You can see the results of this below, Using features 3 and 4 I got an RSS of about 
+133, using features 1, 2, and 5 I got an RSS of about 107 and when using features 1 and 4 I got an RSS of  about 85. 
 
 
 ```python
@@ -264,9 +241,8 @@ print("\nRSS:", rss)
     RSS: 85.24503305195404
     
 
-*After experimenting with different combinations, I was unable to get a combination that produced a lower RSS value than I got when using all of the features. Of course, I did not try all the possible feature combinations, so there is the possibility that a combination I didn't try could give a smaller RSS value.*
-
-
-```python
-
-```
+While I wasn’t able to get and RSS value smaller than when I used all the features, I did not test all possible 
+combinations, therefore, it might be possible to achieve a smaller RSS value with a different combination of features.
+The best way to go about this would probably be to write a program that goes through every possible feature combination and 
+outputs the one with the lowest RSS value, the result from that would be the feature combination that would be the most useful to use when making 
+predictions.

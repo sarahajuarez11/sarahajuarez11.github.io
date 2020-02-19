@@ -105,25 +105,30 @@ of the samples are still equal to or less than five. Overall, the samples seem t
 For the next step, I randomly select 5 pairs of features and plotted them on scatter plots. 
 Each data point is color-coded to indicate the class in which the samples belong to (e.g., blue for benign, red for malignant).
 Looking at the results from this graph, the data appears to be seperable, with the benign samples being concentrated on the bottom 
-left of the graphs and the malignant samples being centered on the top right of the graphs.
+left of the graphs and the malignant samples being centered on the top right of the graphs. 
 
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_14_0.png" alt="">
 
 
 **Implementing a K-Nearest Neighbor Classifier:** 
-For the using the euclidean distance (l2-norm) as a distance measure to classify between the benign and malignant classes.
-**Please implement K-NN and do not use available libraries.**
+Since the data does appear to seperable, K-NN is a valid model to use. If the data were not seperable into two groups,
+then K-NN would not be as good of a model for the data and would have a low classification accuracy.
+Now, to actually implement K-NN. In this project, I didn't use any available libraries, instead I implemented the algorithm
+from scratch to better understand how it works. I also used two different distance metrics, the euclidean distance (l2-norm) 
+and cosine similarity as distance measures to classify between the benign and malignant classes to see the difference in results.
 
 
 ```python
-################################################## function definitions ####################################################
-# function to calculate Euclidean distance between two arrays of data
-# the Euclidean distance is calculated by taking the square root of the sum of the squared differences of the arrays
+####################### function definitions #######################
+# function to calculate Euclidean distance (ED) btw two arrays of data
+
+# the Euclidean distance is calculated by taking the square root of 
+# the sum of the squared differences of the arrays
 
 # input: two arrays of numbers, arrays are same length
 
-# output: returns the Euclidean distance between the two arrays of numbers 
+# output: returns the ED btw the two arrays of numbers 
 
 def euclideanDistance(row1, row2):
     rows = np.subtract(row1,row2)

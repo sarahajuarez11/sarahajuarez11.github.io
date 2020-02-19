@@ -108,28 +108,16 @@ inner_product(w0, samples, 'w0')
 In this case, the inner product of w(0) and x1 should be greater than zero because x1 is part of class 1 
 and the inner products of w(0) and x2 as well as w(0) and x3 should both be less than zero because they're in class 2. 
 Going off of this, x1 and x3 are correctly classified while x2 is not correctly classified.
-
-**edit end**
- so in part (iii) I used the weight update rule to calculate a new weight based 
-on sample x2 and graphed this new weight line and its direction. After computing the inner products again, 
-now x1 was the only misclassified sample. I used the weight update rule one more time, this time basing it on 
-sample x1 to get a new weight and I plotted this line. Finally after calculating these inner products, I could 
-verify that all of the samples were correctly classified with this new weight line. 
+  
 
 
-**(iii) (1.5 points)** Using the weight update rule from the linear perceptron algorithm, please
-find the value of the new weight w(1) based on the misclassified sample from question (ii). Find
-and plot the new line corresponding to weight w(1) in the 2D space, as well as the direction of
-the weight w(0) on the line. Indicate which samples are correctly classified and which samples
-are not correctly classified.
-
+After this, I used the weight update rule from the linear perceptron algorithm, to find the value of 
+the new weight w(1) based on the misclassified sample. I then plotted the 
+new line corresponding to weight w(1), as well as the direction of
+the weight on the line. 
 
 **Note:** The update rule is $w(t + 1) = w(t) + y_{s}x_{s}$, where $x_{s}$ and $y_{s} ∈ {−1, 1}$ is the feature
 and class label of misclassified sample s.
-
-**Hint:** The line corresponding to a vector $w = [w_{0}, w_{1}, w_{2}]$ can be written as $w_{0}+w_{1}x+w_{2}y = 0$.
-Make sure that you get the direction of the vector w correctly based on the sign of $w_{1}$ and $w_{2}$.
-
 
 
 ```python
@@ -171,14 +159,13 @@ inner_product(w1, samples, 'w1')
     The inner product of w1 and x3: -16
     
 
-*The inner product of w(1) and x1 should be greater than zero because x1 is part of class 1 and the inner products of w(1) and x2 as well as w(1) and x3 should both be negative because they're in class 2. Going off of this, x2 and x3 are correctly classified while x1 is not correctly classified.*
-
-**(iv) (2.5 points)** Using the rule $sign(w(t)^{T}x_{n})$, run the linear perceptron algorithm until it converges, find and plot the weights w(2) and the corresponding lines in each iteration. For each iteration, please indicate which samples are classified correctly and which samples are not classified correctly.
-
-**Hint:** In order to make the linear perceptron algorithm converge as fast as possible, you can
-always update the weight based on sample $x_{1}$. Why?
+Again, the inner product of w(1) and x1 should be greater than zero because x1 is part of class 1 
+and the inner products of w(1) and x2 as well as w(1) and x3 should both be less than zero because they're in class 2. 
+Going off of this, x2 and x3 are correctly classified while x1 is not correctly classified.
 
 
+Now, we use the rule $sign(w(t)^{T}x_{n})$ to run the linear perceptron algorithm until it converges, 
+which in this case only takes one more iteration.
 
 ```python
 # weight update rule to get w(2)
@@ -213,4 +200,4 @@ inner_product(w2, samples, 'w2')
     The inner product of w2 and x3: -8
     
 
-*The inner product of w(1) and x1 should be greater than zero because x1 is part of class 1 and the inner products of w(1) and x2 as well as w(1) and x3 should both be negative because they're in class 2. Going off of this, all of the samples are correctly classified.*
+After the algorithm converges, all the samples are now correctly classified. 

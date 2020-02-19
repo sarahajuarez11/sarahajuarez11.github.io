@@ -12,9 +12,9 @@ The purpose of this project was to break down the linear perceptron algorithm st
 demonstrate how it works. In order to do this, I set up three training samples in a 2D space.
 These samples are:
 
-1. Sample $x_{1}$ with coordinates (1, 3) belonging to Class 1 ($y_{1}$ = 1)
-2. Sample $x_{2}$ with coordinates (3, 2) belonging to Class 2 ($y_{2}$ = −1)
-3. Sample $x_{3}$ with coordinates (4, 1) belonging to Class 2 ($y_{3}$ = −1)
+1. Sample $$x_{1}$$ with coordinates (1, 3) belonging to Class 1 ($$y_{1}$$ = 1)
+2. Sample $$x_{2}$$ with coordinates (3, 2) belonging to Class 2 ($$y_{2}$$ = −1)
+3. Sample $$x_{3}$$ with coordinates (4, 1) belonging to Class 2 ($$y_{3}$$ = −1)
 
 For this project, the linear perceptron is initialized with a line with corresponding weight w(0) = $[2, -1, 1]^{T}$
 (this can also be written as the line 2 − x + y = 0).

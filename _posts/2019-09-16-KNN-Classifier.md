@@ -120,11 +120,11 @@ and cosine similarity as distance measures to classify between the benign and ma
 
 
 ```python
-####################### function definitions #######################
+###################### function definitions ######################
 # calculates Euclidean distance (ED) btw two arrays of data
 
-# the Euclidean distance is calculated by taking the square root of 
-# the sum of the squared differences of the arrays
+# the Euclidean distance is calculated by taking the square root
+# of the sum of the squared differences of the arrays
 
 # input: two arrays of numbers, arrays are same length
 
@@ -152,9 +152,9 @@ def cosineSimilarity(row1, row2):
 # function to get the K-Nearest Neighbors (k) in a set of arrays 
 # (training_set) to one specific array (test_sample) by 
 #     1) findining the Euclidean distance between each sample in 
-#		 the training_set and the test_sample and putting them
-#        in a list called distances along with the index of 
-#		 corresponding row in the training_set
+#		 the training_set and the test_sample and putting
+#        them in a list called distances along with the
+#		 index of the corresponding row in the training_set
 #     2) sort the list based on the distances (shortest to longest)
 #     3) get the first k values from the distances list and return 
 #        them in a list of tuples called neighbors 
@@ -168,8 +168,8 @@ def cosineSimilarity(row1, row2):
 #        samples that are returned
 
 # output: a list of tuples of length k tha contains the row indexes 
-#		  in training arrays that are closest to the testing sample 
-#		  and the distance 
+#		  in training arrays that are closest to the testing 
+#		  sample and the distance 
 
 def getNeighbors(training_set, test_sample, k, dist_type):
     distances = []

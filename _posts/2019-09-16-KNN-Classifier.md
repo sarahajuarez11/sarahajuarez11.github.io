@@ -359,8 +359,9 @@ According to the graph above, which plots the accuracy and balanced accuracy aga
 the best hyper-parameter k based on the accuracy metric is 3 and the best hyper-parameter k based on the balanced 
 accuracy is also 3. In this case, the best hyper-parameters are the same k value.
 
-**(b.iii) (1 point)** Report the Acc and BAcc metrics on the test set using K1 and K2. What do
-you observe?
+
+Next, I tested the model on the test set using the best hyper-parameters found previously and calculated the
+accuracy and balanced accuracy based on these k-values.
 
 
 ```python
@@ -385,11 +386,13 @@ print("Model Balanced Accuracy: ", getBalancedAcc(actual_label, predictions))
     Model Balanced Accuracy:  0.9324324324324325
     
 
-*The Acc and BAcc metrics on the test set using K1 and K2 are lower than on the development set, most probably because the data in the development set is more similar to the data in the training set than the testing set data.*
+The accuracies calculated on the test set are lower than the ones calculated on the development set,
+which is understandable and could be explained by the data in the development set being more similar
+to the data in the training set than the testing set data.
 
-**(b.iv) (Bonus, 2 points)** Instead of using the euclidean distance for all features, experiment
-with different types of distances or distance combinations, e.g. l0-norm or cosine similarity.
-Report your findings.
+
+For the above steps, I'd been using the Euclidean distance, so I then used cosine similarity
+instead to see if the resulting accuracies were better or not.
 
 
 ```python
@@ -493,9 +496,7 @@ print("Model Balanced Accuracy: ", getBalancedAcc(actual_label, predictions))
     Model Balanced Accuracy:  0.2365937365937366
     
 
-*For the bonus, I tested the KNN algorithm using cosine similarity instead of the Euclidean distance. Changing this cause the classification results to be significanlty less accurate, the regular accuracy dropping from .93 to .27 and the balanced accuracy dropping from .93 to .24. Because of this, it's clear that using the cosine similarity is not the best way to get the KNN for this data set.*
-
-
-```python
-
-```
+As you can see, using cosine similarity significanlty lowered the accuracies. The 
+regular accuracy dropped from .93 to .27 and the balanced accuracy dropped from .93 to .24. 
+This shows how important the distance metric used in K-NN is, as it can greatly determine whether the model is 
+a good prediction model or not. 

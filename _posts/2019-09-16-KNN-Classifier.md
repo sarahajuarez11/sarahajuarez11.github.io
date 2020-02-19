@@ -214,14 +214,12 @@ def getPredClass(neighbors):
 # update check
 ```
 
-**(b.ii) (1 point)** Explore different values of K = 1, 3, 5, 7, . . . , 19. You will train one model for
-each of the ten values of K using the train data and compute the classification accuracy (Acc)
-and balanced classification accuracy (BAcc) of the model on the development set. Plot the two
-metrics against the different values of K. Please report the best hyper-parameter K1 based on
-the Acc metric, and the best hyper-parameter K2 based on the BAcc metric. What do you
-observe? Please implement this procedure from scratch and do not use available
-libraries.
+For the next step, we want to figure out how well the K-NN model actually works on this 
+dataset, so I wrote two functions to calculate both the accuracy and balanced accuracy
+of the model on the development set. 
 
+In addition to this, I explored the results with different values of k to see which 
+resulted in better classification accuracies.
 
 
 ```python

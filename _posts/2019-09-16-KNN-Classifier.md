@@ -211,7 +211,6 @@ def getPredClass(neighbors):
         return 2
     else:
         return 4
-# update check
 ```
 
 For the next step, we want to figure out how well the K-NN model actually works on this 
@@ -356,8 +355,9 @@ model_test.plot('k-values')
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/knn/output_21_0.png" alt="">
 
-
-*According to the graph above, which plots the accuracy and balanced accuracy against the different values of k, the best hyper-parameter K1 based on the accuracy metric is 3 and the best hyper-parameter K2 based on the balanced accuracy is also 3. In this case, the best hyper-parameters are the same k value.*
+According to the graph above, which plots the accuracy and balanced accuracy against the different values of k, 
+the best hyper-parameter k based on the accuracy metric is 3 and the best hyper-parameter k based on the balanced 
+accuracy is also 3. In this case, the best hyper-parameters are the same k value.
 
 **(b.iii) (1 point)** Report the Acc and BAcc metrics on the test set using K1 and K2. What do
 you observe?

@@ -16,11 +16,11 @@ These samples are:
 2. Sample $$x_{2}$$ with coordinates (3, 2) belonging to Class 2 ($$y_{2}$$ = −1)
 3. Sample $$x_{3}$$ with coordinates (4, 1) belonging to Class 2 ($$y_{3}$$ = −1)
 
-For this project, the linear perceptron is initialized with a line with corresponding weight w(0) = $[2, -1, 1]^{T}$
-(this can also be written as the line 2 − x + y = 0).
+For this project, the linear perceptron is initialized with a line with corresponding weight $$w(0) = [2, -1, 1]^{T}$$
+(this can also be written as the line $$2 − x + y = 0$$).
 
 
-To start off, I simply plotted $x_{1}$, $x_{2}$, and $x_{3}$, the starting weight 
+To start off, I simply plotted $$x_{1}$$, $$x_{2}$$, and $$x_{3}$$, the starting weight 
 line w(0) and the direction of the weight w(0) on the line. I also defined two functions, one for plotting these three things and another 
 for computing dot product for the next part of the project. 
 
@@ -79,7 +79,7 @@ plot_graph(x, y, sample_names, colors, x0, y0, -1, 1, 'w(0)')
 
 
 
-For the next step, I used the rule $sign(w(t)^{T}x_{n}$), to determine which samples
+For the next step, I used the rule $$sign(w(t)^{T}x_{n})$$, to determine which samples
 were correctly and incorrectly classified using the weight w(0).
 To do this, I first wrote the data points and weight as vectors 
 and then computed the inner product between the weight and each sample to see which 
@@ -105,9 +105,9 @@ inner_product(w0, samples, 'w0')
     The inner product of w0 and x3: -1
     
 
-In this case, the inner product of w(0) and x1 should be greater than zero because x1 is part of class 1 
-and the inner products of w(0) and x2 as well as w(0) and x3 should both be less than zero because they're in class 2. 
-Going off of this, x1 and x3 are correctly classified while x2 is not correctly classified.
+In this case, the inner product of w(0) and $$x_{1}$$ should be greater than zero because $$x_{1}$$ is part of class 1 
+and the inner products of w(0) and $$x_{2}$$ as well as w(0) and $$x_{3}$$ should both be less than zero because they're in class 2. 
+Going off of this, $$x_{1}$$ and $$x_{3}$$ are correctly classified while $$x_{2}$$ is not correctly classified.
   
 
 
@@ -116,7 +116,7 @@ the new weight w(1) based on the misclassified sample. I then plotted the
 new line corresponding to weight w(1), as well as the direction of
 the weight on the line. 
 
-**Note:** The update rule is $w(t + 1) = w(t) + y_{s}x_{s}$, where $x_{s}$ and $y_{s} ∈ {−1, 1}$ is the feature
+**Note:** The update rule is $$w(t + 1) = w(t) + y_{s}x_{s}$$, where $$x_{s}$$ and $$y_{s} ∈ {−1, 1}$$ is the feature
 and class label of misclassified sample s.
 
 
@@ -159,12 +159,12 @@ inner_product(w1, samples, 'w1')
     The inner product of w1 and x3: -16
     
 
-Again, the inner product of w(1) and x1 should be greater than zero because x1 is part of class 1 
-and the inner products of w(1) and x2 as well as w(1) and x3 should both be less than zero because they're in class 2. 
-Going off of this, x2 and x3 are correctly classified while x1 is not correctly classified.
+Again, the inner product of w(1) and $$x_{1}$$ should be greater than zero because $$x_{1}$$ is part of class 1 
+and the inner products of w(1) and $$x_{2}$$ as well as w(1) and $$x_{3}$$ should both be less than zero because they're in class 2. 
+Going off of this, $$x_{2}$$ and $$x_{3}$$ are correctly classified while $$x_{1}$$ is not correctly classified.
 
 
-Now, we use the rule $sign(w(t)^{T}x_{n})$ to run the linear perceptron algorithm until it converges, 
+Now, we use the rule $$sign(w(t)^{T}x_{n})$$ to run the linear perceptron algorithm until it converges, 
 which in this case only takes one more iteration.
 
 ```python

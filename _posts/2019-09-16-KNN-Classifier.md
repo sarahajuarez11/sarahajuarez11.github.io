@@ -3,7 +3,7 @@ title: "K-NN Classifier"
 date: 2019-09-16
 header:
   image: "/images/anhui.jpg"
-excerpt: "This is an assignment I worked on in my Machine Learning class where I implemented a K-Nearest Neighbors algorithm."
+excerpt: "In this project I implemented a K-Nearest Neighbors algorithm from scratch and used it to classify between benign and malignant tumors."
 mathjax: "true"
 ---
 

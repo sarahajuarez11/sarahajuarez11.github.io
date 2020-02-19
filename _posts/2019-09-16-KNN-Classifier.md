@@ -223,11 +223,13 @@ resulted in better classification accuracies.
 
 
 ```python
-################################################## function definitions ####################################################
-# function to calculate the classification accuracy of the model, accuracy is calculated as the number of correct 
-# classifications over the total number of samples attempted to classify 
+###################### function definitions ######################
+# function to calculate the classification accuracy of the model, 
+# accuracy is calculated as the number of correct classifications 
+# over the total number of samples attempted to classify 
 
-#input: array of actual label values and array of predicted label values
+#input: array of actual label values and array of predicted label 
+#       values
 
 #output: accuracy of model
 
@@ -240,11 +242,15 @@ def getAcc(actual, pred):
     return acc
 
 
-# function to calculate the balanced classification accuracy of the model, this is calculated as the number of correct 
-# classifications of the first class over the total number of samples in the first class summed by the number of 
-# classifications of the second class ove the total number of samples in the second class all divided by 2
+# function to calculate the balanced classification accuracy of 
+# the model, this is calculated as the number of correct 
+# classifications of the first class over the total number of 
+# samples in the first class summed by the number of classifications 
+# of the second class ove the total number of samples in the second 
+# class all divided by 2
 
-#input: array of actual label values and array of predicted label values
+#input: array of actual label values and array of predicted label 
+#       values
 
 #output: balanced accuracy of model
 

@@ -152,9 +152,9 @@ def cosineSimilarity(row1, row2):
 # function to get the K-Nearest Neighbors (k) in a set of arrays 
 # (training_set) to one specific array (test_sample) by 
 #     1) findining the Euclidean distance between each sample in 
-#		 the training_set and the test_sample and putting
+#        the training_set and the test_sample and putting
 #        them in a list called distances along with the
-#		 index of the corresponding row in the training_set
+#        index of the corresponding row in the training_set
 #     2) sort the list based on the distances (shortest to longest)
 #     3) get the first k values from the distances list and return 
 #        them in a list of tuples called neighbors 
@@ -162,14 +162,14 @@ def cosineSimilarity(row1, row2):
 # input: 1) an array of features of a sample who you want to find k 
 #        neighbors for (test_sample)
 #        2) a set of arrays of features for multiple samples who you 
-#		 will calculate the distance for against the testing 
-#        array (training_set)
+#           will calculate the distance for against the testing 
+#           array (training_set)
 #        3) a value for k that will determine the number of closest 
-#        samples that are returned
+#           samples that are returned
 
 # output: a list of tuples of length k tha contains the row indexes 
-#		  in training arrays that are closest to the testing 
-#		  sample and the distance 
+#         in training arrays that are closest to the testing 
+#         sample and the distance 
 
 def getNeighbors(training_set, test_sample, k, dist_type):
     distances = []

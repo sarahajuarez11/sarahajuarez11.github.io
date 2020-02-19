@@ -121,7 +121,7 @@ and cosine similarity as distance measures to classify between the benign and ma
 
 ```python
 ####################### function definitions #######################
-# function to calculate Euclidean distance (ED) btw two arrays of data
+# calculates Euclidean distance (ED) btw two arrays of data
 
 # the Euclidean distance is calculated by taking the square root of 
 # the sum of the squared differences of the arrays
@@ -149,19 +149,27 @@ def cosineSimilarity(row1, row2):
     return dot_prod / denom
 
 
-# function to get the K-Nearest Neighbors (k) in a set of arrays (training_set) to one specific array (test_sample) by 
-#     1) findining the Euclidean distance between each sample in the training_set and the test_sample and putting them
-#        in a list called distances along with the index of corresponding row in the training_set
+# function to get the K-Nearest Neighbors (k) in a set of arrays 
+# (training_set) to one specific array (test_sample) by 
+#     1) findining the Euclidean distance between each sample in 
+#		 the training_set and the test_sample and putting them
+#        in a list called distances along with the index of 
+#		 corresponding row in the training_set
 #     2) sort the list based on the distances (shortest to longest)
-#     3) get the first k values from the distances list and return them in a list of tuples called neighbors 
+#     3) get the first k values from the distances list and return 
+#        them in a list of tuples called neighbors 
 
-# input: an array of features of a sample who you want to find k neighbors for (test_sample)
-#        a set of arrays of features for multiple samples who you you will calculate the distance for against the testing 
+# input: 1) an array of features of a sample who you want to find k 
+#        neighbors for (test_sample)
+#        2) a set of arrays of features for multiple samples who you 
+#		 will calculate the distance for against the testing 
 #        array (training_set)
-#        a value for k that will determine the number of closest samples that are returned
+#        3) a value for k that will determine the number of closest 
+#        samples that are returned
 
-# output: a list of tuples of length k tha contains the row indexes in training arrays that are closest to the testing 
-#         sample and the distance 
+# output: a list of tuples of length k tha contains the row indexes 
+#		  in training arrays that are closest to the testing sample 
+#		  and the distance 
 
 def getNeighbors(training_set, test_sample, k, dist_type):
     distances = []
@@ -180,12 +188,15 @@ def getNeighbors(training_set, test_sample, k, dist_type):
     return neighbors
 
 
-# function to decide whether a sample belongs to class benign or malignant based on its K-Nearest Neighbors by getting the
-# label of each neighbor, counting how many are benign and how many are malignant and then returning whichever of the two 
-# classes had the most votes
+# function to decide whether a sample belongs to class benign or 
+# malignant based on its K-Nearest Neighbors by getting the label 
+# of each neighbor, counting how many are benign and how many are 
+# malignant and then returning whichever of the two classes had 
+# the most votes
 
-# input: list of tuples that has, index of row of neighbor and the distance between the neighbor and sample we are trying 
-#        to classify
+# input: list of tuples that has, index of row of neighbor and the 
+# distance between the neighbor and sample we are trying to classify
+
 # output: predicted label (either 2 or 4) of unlabeled sample
 
 def getPredClass(neighbors):

@@ -3,39 +3,29 @@ title: "Linear Regression Model"
 date: 2019-10-03
 header:
   image: "/images/anhui.jpg"
-excerpt: "In this project I implemented a linear regression model "
+excerpt: "In this project I implemented a linear regression model to predict the sound pressure in an anechoic wind tunnel."
 mathjax: "true"
 ---
 
-For question 2 of this homework, we had to implement a linear regression model using the ordinary least squares 
-solution and then test the model by computing the residual sum of squares error between the actual and predicted 
-outcome variable. For part (i), I simply plotted histograms of the features and outcome of the training data to 
-observe how the values were distributed over the data. Then in part (ii) I defined a function to calculate the OLS, 
-and then used it on the training data to compute an array of 6 weights. After this, in part (iii), I defined a 
-function to calculate the RSS value and then used to calculate the RSS using the test data, the weights calculated 
-previously and test data’s actual outcomes. My RSS value when using all the features was about 71. For the bonus, 
-I followed the same process, but using different feature combinations. Using features 3 and 4 I got an RSS of about 
-133, using features 1, 2, and 5 I got an RSS of about 107 and when using features 1 and 4 I got an RSS of  about 85. 
-I wasn’t able to get and RSS value smaller than when I used all the features, however, I did not test all possible 
-combinations, so it might be possible to achieve a smaller RSS value with a different combination of features.
+## Predicting Sound Pressure in Wind Tunnel Using Linear Regression Model: 
 
-## Question 2 (5 points)
-### Predicting sound pressure in NASA wind tunnel: 
-We would like to predict the sound pressure in an anechoic wind tunnel. This can help NASA design ground-based wind tunnels in order to assess the effect of noise during spaceflight. We use data from the Airfoil Self-Noise Data Set in the following UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise#.
-
-
-Inside “Homework 2” folder on Piazza you can find two files including the train and test data (named “hw1 question1 train.csv” and ”hw1 question1 test.csv”) for our experiments. The rows of these files refer to the data samples, while the columns denote the features (columns 1-5) and the sound pressure output (column 6), as described bellow:
+The main purpose of this project was to predict the sound pressure in an anechoic wind tunnel. 
+This was done using data from the Airfoil Self-Noise Data Set in the following UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise#.
+The rows of these files represent the data samples, while columns 1-5 are the features and the sound pressure output is column 6, as described below:
 
 1. Frequency, in Hertz
 2. Angle of attack, in degrees
 3. Chord length, in meters
 4. Free-stream velocity, in meters per second
 5. Suction side displacement thickness, in meters
-6. Scaled sound pressure level, in decibels (this is the **outcome**)
+6. Scaled sound pressure level, in decibels
 
-**(i) (1.5 point) Data exploration:** Using the training data, plot the histogram of each feature
-and the output (i.e., 6 total histograms). How are the features and the output distributed?
-
+**Data exploration:**
+To begin, I first plotted a histogram of each feature and the output to see how they are distributed.
+What I found was that feature 1 is distributed mostly around 0-5000 Hertz, feature 2 is a little more 
+evenly distributed, with the highestest distributions around 0-1 degrees and 10 degrees. Features 3 and 4 
+are distributed in 4 specific values, the rest of the values having no samples and feature 5 has the most 
+samples between 0 and 0.01 meters. The outcome distribution increases until it peaks at around 128 decibels and then it decreases.
 
 ```python
 # read in training data
@@ -62,14 +52,25 @@ plt.tight_layout()
 <img src="{{ site.url }}{{ site.baseurl }}/images/p2/output_23_0.png" alt="">
 
 
-*Feature 1 is distributed mostly around 0-5000 Hertz, feature 2 is a little more evenly distributed, with the highestest distributions around 0-1 degrees and 10 degrees. Features 3 and 4 are distributed in 4 specific values, the rest of the values having no samples and feature 5 has the most samples between 0 and 0.01 meters. The outcome distribution increases until it peaks at around 128 decibels and then it decreases.*
+For question 2 of this homework, we had to implement a linear regression model using the ordinary least squares 
+solution and then test the model by computing the residual sum of squares error between the actual and predicted 
+outcome variable. 
+Then in part (ii) I defined a function to calculate the OLS, 
+and then used it on the training data to compute an array of 6 weights. 
+After this, in part (iii), I defined a 
+function to calculate the RSS value and then used to calculate the RSS using the test data, the weights calculated 
+previously and test data’s actual outcomes. My RSS value when using all the features was about 71. For the bonus, 
+I followed the same process, but using different feature combinations. Using features 3 and 4 I got an RSS of about 
+133, using features 1, 2, and 5 I got an RSS of about 107 and when using features 1 and 4 I got an RSS of  about 85. 
+I wasn’t able to get and RSS value smaller than when I used all the features, however, I did not test all possible 
+combinations, so it might be possible to achieve a smaller RSS value with a different combination of features.
 
-**(ii) (2 points)** Using the train data, implement a linear regression model using the ordinary
-least squares (OLS) solution. How many parameters does this model have?
+**Implementing a Linear Regression Model:** 
+After that, I implemented a linear regression model using the ordinary least squares (OLS) solution. 
 
 
-**Hint:** You will build the data matrix $X ∈ R^{N_{train}×6}$, whose rows correspond to the training
-samples $x_{1}, . . . , x_{N_{train}} ∈ R^{5×1}$ and columns to the features (including the constant 1 for the
+**Hint:** You will build the data matrix $$X ∈ R^{N_{train}×6}$$, whose rows correspond to the training
+samples $$x_{1}, . . . , x_{N_{train}} ∈ R^{5×1}$$ and columns to the features (including the constant 1 for the
 intercept): 
 
 \begin{equation*}
@@ -82,7 +83,7 @@ intercept):
 \end{equation*}
 
 
-Then use the ordinary least squares solution that we learned in class: $w^{∗} = (X^{T} X)^{−1}X^{T} y$.
+Then use the ordinary least squares solution that we learned in class: $$w^{∗} = (X^{T} X)^{−1}X^{T} y$$.
 
 
 **Note:** You can use libraries for matrix operations.

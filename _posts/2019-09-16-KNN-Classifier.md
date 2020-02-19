@@ -7,10 +7,9 @@ excerpt: "In this project I implemented a K-Nearest Neighbors algorithm from scr
 mathjax: "true"
 ---
 
-## Classifying Benign vs Malignant Tumors
+## Classifying Benign vs Malignant Tumors Using K-NN Classifier
 The main purpose of this project was to classify whether a tumor is benign or malign based on its attributes. 
 This was done using data from the following UCI Machine Learning Repository: [link](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original).)
-The three files csv files used can be found on my GitHub under "K-NN Classifier".
 The rows of these files represent the data samples, while columns 1-9 are the features and the class variable is column 10, as described below:
 
 1. Clump Thickness: discrete values {1, 10}

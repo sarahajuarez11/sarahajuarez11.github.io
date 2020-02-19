@@ -211,6 +211,7 @@ def getPredClass(neighbors):
         return 2
     else:
         return 4
+# update check
 ```
 
 **(b.ii) (1 point)** Explore different values of K = 1, 3, 5, 7, . . . , 19. You will train one model for
